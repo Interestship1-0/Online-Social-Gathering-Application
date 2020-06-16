@@ -4,9 +4,18 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +23,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class RegistrationFragment extends Fragment {
+
+    EditText uname , email , phone , pass;
+    Button submit;
+    DatabaseReference mDatabase;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,8 +73,50 @@ public class RegistrationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         View rootView =  inflater.inflate(R.layout.fragment_registration, container, false);
 
+
+        uname = rootView.findViewById(R.id.editTextUsername);
+        email = rootView.findViewById(R.id.editTextEmail);
+        phone = rootView.findViewById(R.id.editTextPhone);
+        pass = rootView.findViewById(R.id.editTextPassword);
+        submit = rootView.findViewById(R.id.buttonSubmit);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                addUser();
+
+            }
+        });
+
+
+
+
+
+
         return rootView;
+    }
+
+
+    private void addUser(){
+
+        String username,emailId,phoneNo,password;
+
+        username = uname.getText().toString().trim();
+        emailId = email.getText().toString().trim();
+        phoneNo = phone.getText().toString().trim();
+        password = pass.getText().toString().trim();
+
+        if(TextUtils.isEmpty(username) || TextUtils.isEmpty(emailId) || TextUtils.isEmpty(phoneNo) || TextUtils.isEmpty(password)){
+            Toast.makeText(getActivity(),"Kindly fill all the details!",Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 }

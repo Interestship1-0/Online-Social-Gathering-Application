@@ -105,6 +105,7 @@
             android:drawableEnd="@drawable/pass" />
 
         <Button
+            android:id="@+id/buttonSubmit"
             android:layout_width="@dimen/_155sdp"
             android:layout_height="@dimen/_47sdp"
             android:layout_marginTop="@dimen/_16sdp"
