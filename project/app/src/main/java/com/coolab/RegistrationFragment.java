@@ -2,6 +2,7 @@ package com.coolab;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -12,8 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -106,7 +110,9 @@ public class RegistrationFragment extends Fragment {
 
     private void addUser(){
 
-        String username,emailId,phoneNo,password;
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+
+        final String username,emailId,phoneNo,password;
 
         username = uname.getText().toString().trim();
         emailId = email.getText().toString().trim();
@@ -115,6 +121,53 @@ public class RegistrationFragment extends Fragment {
 
         if(TextUtils.isEmpty(username) || TextUtils.isEmpty(emailId) || TextUtils.isEmpty(phoneNo) || TextUtils.isEmpty(password)){
             Toast.makeText(getActivity(),"Kindly fill all the details!",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+         if(!(phoneNo.length()>=6 && phoneNo.length()<=10 ))
+        {
+            phone.setError("Enter a valid phone number!");
+            phone.requestFocus();
+            return;
+        }
+
+         if(emailId.matches(regex)!=true){
+             email.setError("Enter valid email!!");
+             email.requestFocus();
+             return;
+         }
+
+         
+
+        else {
+           final User user = new User(username,emailId,phoneNo,password);
+            mDatabase.orderByChild("pno").equalTo(phoneNo).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    if(dataSnapshot.exists()){
+                        Toast.makeText(getActivity(),"User already registered",Toast.LENGTH_SHORT).show();
+
+                    }
+                    else
+                    {
+                        String id = mDatabase.push().getKey();
+                        mDatabase.child(id).setValue(user);
+
+                        Toast.makeText(getActivity(),"User successfully registered !",Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
         }
 
 
