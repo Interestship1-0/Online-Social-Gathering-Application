@@ -3,11 +3,13 @@ package com.coolab;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -79,6 +81,23 @@ public class ProfileFragment extends Fragment {
         ListView listView = rootView.findViewById(R.id.settingsList);
 
         listView.setAdapter(adapterSettings);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if(i==0)
+                {
+
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    getActivity().recreate();
+
+
+                }
+
+            }
+        });
 
 
 
