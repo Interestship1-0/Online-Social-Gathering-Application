@@ -3,16 +3,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/title_profile"
-        android:layout_gravity="center"
-        android:textSize="@dimen/_30sdp"/>
+        android:background="?attr/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/Settings" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profiles"
+                    android:id="@+id/profilePicture" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Username"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_20ssp"
+                    android:fontFamily="@font/sofia_pro_bold"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/settingsList"
+            android:layout_width="match_parent"
+            android:layout_height="254dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="from"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/sofia_pro_extra_light"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/c_l_i_q_u_e"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+
+
+
 
 </FrameLayout>

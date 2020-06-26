@@ -14,4 +14,9 @@
     <string name="title_profile">Profile</string>
     <string name="title_events">Events</string>
     <string name="title_feed">Feed</string>
+    <string name="Settings">Settings</string>
+    <string name="Username">Username</string>
+    <string name="main_text">Main Text</string>
+    <string name="sub_text">Sub text</string>
+    <string name="c_l_i_q_u_e">C L I Q U E</string>
 </resources>

@@ -2,11 +2,15 @@ package com.coolab;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +53,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -59,6 +65,35 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
+        final ArrayList<SettingDetails> details = new ArrayList<SettingDetails>();
+        details.add(new SettingDetails(R.drawable.noti,"Theme","Change to Light/Dark Theme"));
+        details.add(new SettingDetails(R.drawable.coolabicon,"About Coolab","Application Info"));
+        details.add(new SettingDetails(R.drawable.about,"Contact Us","Find us here :)"));
+
+
+        AdapterSettings adapterSettings = new AdapterSettings(getActivity(),details,0);
+
+        ListView listView = rootView.findViewById(R.id.settingsList);
+
+        listView.setAdapter(adapterSettings);
+
+
+
+
+
+
+
+
+        return rootView;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+
     }
 }
