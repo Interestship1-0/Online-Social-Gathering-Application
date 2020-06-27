@@ -71,7 +71,8 @@ public class ProfileFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
         final ArrayList<SettingDetails> details = new ArrayList<SettingDetails>();
-        details.add(new SettingDetails(R.drawable.noti,"Theme","Change to Light/Dark Theme"));
+        details.add(new SettingDetails(R.drawable.theme,"Theme","Change to Light/Dark Theme"));
+        details.add(new SettingDetails(R.drawable.noti,"Notifications","Set your notification Preferences :)"));
         details.add(new SettingDetails(R.drawable.coolabicon,"About Coolab","Application Info"));
         details.add(new SettingDetails(R.drawable.about,"Contact Us","Find us here :)"));
 

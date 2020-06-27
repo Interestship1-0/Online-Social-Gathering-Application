@@ -25,7 +25,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_190sdp"
+            android:layout_height="@dimen/_170sdp"
             android:background="@color/settingback">
 
             <LinearLayout
@@ -40,7 +40,7 @@
                     android:id="@+id/profilePicture"
                     android:layout_width="322dp"
                     android:layout_height="152dp"
-                    android:layout_marginTop="@dimen/_28sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:src="@drawable/circle" />
 
                 <TextView
@@ -60,11 +60,11 @@
 
         </RelativeLayout>
 
+
         <ListView
             android:id="@+id/settingsList"
             android:layout_width="match_parent"
-            android:layout_height="254dp" />
-
+            android:layout_height="317dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,11 +80,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/c_l_i_q_u_e"
             android:layout_gravity="center"
-            android:textSize="@dimen/_16ssp"
             android:fontFamily="@font/sofia_pro_bold"
-            android:textColor="@color/colorPrimary"/>
+            android:text="@string/c_l_i_q_u_e"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16ssp" />
 
 
     </LinearLayout>
