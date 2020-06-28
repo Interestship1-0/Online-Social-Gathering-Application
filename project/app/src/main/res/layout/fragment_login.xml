@@ -101,14 +101,14 @@
 
 
         <Button
-            android:id="@+id/buttonSubmit"
+            android:id="@+id/buttonLogin"
             android:layout_width="@dimen/_155sdp"
             android:layout_height="@dimen/_47sdp"
             android:layout_marginTop="@dimen/_28sdp"
             android:textColor="@color/colorPrimaryDark"
             android:background="@drawable/button_round"
             android:layout_gravity="center"
-            android:text="Submit"
+            android:text="Login"
             android:fontFamily="@font/sofia_pro_bold"
             android:textSize="@dimen/_18ssp"/>
 

@@ -18,7 +18,7 @@ import android.widget.Button;
  */
 public class ChoiceFragment extends Fragment {
 
-    Button btn;
+    Button btn,btnLogin;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,6 +68,8 @@ public class ChoiceFragment extends Fragment {
 
         btn = rootView.findViewById(R.id.btnSingUp);
 
+        btnLogin = rootView.findViewById(R.id.btnLogin);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +79,19 @@ public class ChoiceFragment extends Fragment {
                 fragmentTransaction.replace(R.id.container,registerFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+            }
+        });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginFragment loginFragment = new LoginFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction =  fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.container,loginFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
             }
         });
 
