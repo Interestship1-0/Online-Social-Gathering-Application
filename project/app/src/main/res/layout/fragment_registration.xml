@@ -105,6 +105,7 @@
                 app:backgroundTint="@android:color/white" />
 
             <EditText
+                android:inputType="textPassword"
                 android:id="@+id/editTextPassword"
                 style="@style/MyEditTextStyle"
                 android:layout_width="@dimen/_240sdp"
