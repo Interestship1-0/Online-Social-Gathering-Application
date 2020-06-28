@@ -25,7 +25,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_170sdp"
+            android:layout_height="@dimen/_195sdp"
             android:background="@color/settingback">
 
             <LinearLayout
@@ -64,7 +64,7 @@
         <ListView
             android:id="@+id/settingsList"
             android:layout_width="match_parent"
-            android:layout_height="317dp" />
+            android:layout_height="272dp" />
 
         <TextView
             android:layout_width="wrap_content"
