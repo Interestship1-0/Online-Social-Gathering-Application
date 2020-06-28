@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:id="@+id/mainLinearLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewStart"
+                android:layout_width="@dimen/_300sdp"
+                android:layout_height="@dimen/_280sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@color/background"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:src="@drawable/globe" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    <LinearLayout
+        android:padding="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_355sdp"
+        android:background="@drawable/round_background"
+        android:orientation="vertical"
+        android:id="@+id/childLinearLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="@dimen/_104sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sofia_pro_black"
+            android:gravity="center"
+            android:text="@string/proceed_to"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_19ssp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="@dimen/_96sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:gravity="center"
+            android:text="@string/log_in"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_25ssp"
+            android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            style="@style/MyEditTextStyle"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/Phone_number"
+            android:id="@+id/editTextUsername"
+            android:drawableRight="@drawable/phone"
+            android:drawableTint="@android:color/white"
+            android:backgroundTint="@android:color/white"
+            android:drawableEnd="@drawable/phone" />
+
+
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="@dimen/_155sdp"
+            android:layout_height="@dimen/_47sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/button_round"
+            android:layout_gravity="center"
+            android:text="Submit"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:textSize="@dimen/_18ssp"/>
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
