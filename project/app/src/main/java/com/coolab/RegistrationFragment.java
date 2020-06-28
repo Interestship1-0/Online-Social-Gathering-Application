@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -155,6 +157,12 @@ public class RegistrationFragment extends Fragment {
                         mDatabase.child(id).setValue(user);
 
                         Toast.makeText(getActivity(),"User successfully registered !",Toast.LENGTH_SHORT).show();
+                        ChoiceFragment choiceFragment = new ChoiceFragment();
+                        FragmentManager fragmentManager = getFragmentManager();
+                        FragmentTransaction fragmentTransaction =  fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.container,choiceFragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
 
 
                     }
