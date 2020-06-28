@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +17,8 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+
+    EditText mobileEdit;
     Button submit;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -65,10 +68,20 @@ public class LoginFragment extends Fragment {
         View rootView= inflater.inflate(R.layout.fragment_login, container, false);
 
         submit = rootView.findViewById(R.id.buttonLogin);
+        mobileEdit = rootView.findViewById(R.id.editTextPhone);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String mno = mobileEdit.getText().toString().trim();
+
+                if(mno.isEmpty() || mno.length()<10)
+                {
+                    mobileEdit.setError("Enter a valid mobile number");
+                    mobileEdit.requestFocus();
+                    return;
+                }
                 Intent intent = new Intent(getActivity(),BottomNavigationView.class);
                 startActivity(intent);
             }

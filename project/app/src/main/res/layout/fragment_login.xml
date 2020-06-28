@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="@string/Phone_number"
-            android:id="@+id/editTextUsername"
+            android:id="@+id/editTextPhone"
             android:drawableRight="@drawable/phone"
             android:drawableTint="@android:color/white"
             android:backgroundTint="@android:color/white"
