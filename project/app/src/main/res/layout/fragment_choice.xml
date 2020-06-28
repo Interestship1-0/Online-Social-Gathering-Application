@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoiceFragment"
+    android:background="@color/colorPrimary">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/coolab"
+            android:textSize="@dimen/_34sdp"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:layout_marginTop="@dimen/_34sdp"
+            android:layout_gravity="center"/>
+
+
+        <ImageView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            android:src="@drawable/globe"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_47sdp"
+            android:background="@drawable/button_round"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Log In"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_40sdp"/>
+
+        <Button
+            android:id="@+id/btnSingUp"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_47sdp"
+            android:background="@drawable/button_round"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Sign Up"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20ssp"
+            android:fontFamily="@font/sofia_pro_bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"/>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>
